@@ -11,11 +11,11 @@ import (
 
 type Handler struct {
 	keyCh     chan chan string
-	db        *store.MapDB
+	db        store.Store
 	domainUrl string
 }
 
-func NewHandler(keyCh chan chan string, db *store.MapDB, domainUrl string) *Handler {
+func NewHandler(keyCh chan chan string, db store.Store, domainUrl string) *Handler {
 	return &Handler{
 		keyCh:     keyCh,
 		db:        db,
